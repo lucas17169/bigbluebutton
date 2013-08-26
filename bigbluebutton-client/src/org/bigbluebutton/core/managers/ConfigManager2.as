@@ -49,8 +49,14 @@ package org.bigbluebutton.core.managers
     private function buildRequestURL():String {
       var swfURL:String = FlexGlobals.topLevelApplication.url;
       var protocol:String = URLUtil.getProtocol(swfURL);
-      var serverName:String = URLUtil.getServerNameWithPort(swfURL);        
-      return protocol + "://" + serverName + "/" + CONFIG_XML;
+      var serverName:String = URLUtil.getServerNameWithPort(swfURL);
+	  
+	  // original
+	  //return protocol + "://" + serverName + "/" + CONFIG_XML;
+	  
+	  // just for testing purposes 	  
+	  //return "http://143.54.10.122/bigbluebutton/api/configXML"; //?a=1376677189125
+	  return "conf/config.xml"
     }
     
 		private function handleComplete(e:Event):void{

@@ -45,7 +45,15 @@ package org.bigbluebutton.util.i18n
 
 	public class ResourceUtil extends EventDispatcher {
 		private static var instance:ResourceUtil = null;
-		public static const LOCALES_FILE:String = "client/conf/locales.xml";
+		
+		
+		// original 
+		// public static const LOCALES_FILE:String = "client/conf/locales.xml";
+		
+		// just for testing purposes 
+		public static const LOCALES_FILE:String = "conf/locales.xml";
+		// -----
+		
 		public static const VERSION:String = "0.8";
     
 		private var inited:Boolean = false;
@@ -90,7 +98,13 @@ package org.bigbluebutton.util.i18n
       var swfURL:String = FlexGlobals.topLevelApplication.url;
       var protocol:String = URLUtil.getProtocol(swfURL);
       var serverName:String = URLUtil.getServerNameWithPort(swfURL);        
-      return protocol + "://" + serverName + "/";
+      // original 
+	  //return protocol + "://" + serverName + "/";
+	  
+	  // just for testing purposes 
+	  return ""
+	  //return "http://143.54.10.122/"
+	  //return "conf/config.xml"
     }
     
 		private function handleComplete(e:Event):void{

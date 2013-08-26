@@ -16,3 +16,6 @@ bbb-api-demo/.project
 bigbluebutton-web/.settings*
 bigbluebutton-web/.classpath
 bigbluebutton-web/.project
+
+bigbluebutton-client/locale/*.swf
+bigbluebutton-client/html-template/

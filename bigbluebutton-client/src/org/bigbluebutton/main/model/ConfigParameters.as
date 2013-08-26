@@ -61,7 +61,7 @@ package org.bigbluebutton.main.model
 		
 		private var _modules:Dictionary;
 		
-		public function ConfigParameters(loadedListener:Function, file:String = CONFIG_XML) {			
+		public function ConfigParameters(loadedListener:Function, file:String = CONFIG_XML) {
 			this.numModules = 0;
 			this.loadedListener = loadedListener;
 			_urlLoader = new URLLoader();
@@ -71,13 +71,18 @@ package org.bigbluebutton.main.model
       
       trace("ConfigParameters:: [" + localeReqURL + "]");
       _urlLoader.load(new URLRequest(localeReqURL));
-		}
+	}
 		
     private function buildRequestURL():String {
       var swfURL:String = FlexGlobals.topLevelApplication.url;
       var protocol:String = URLUtil.getProtocol(swfURL);
       var serverName:String = URLUtil.getServerNameWithPort(swfURL);        
-      return protocol + "://" + serverName + "/" + CONFIG_XML;
+      // original
+	  //return protocol + "://" + serverName + "/" + CONFIG_XML;
+	  
+	  // just for testing purposes 
+	  //return "http://143.54.10.122/bigbluebutton/api/configXML"; //?a=1376677189125
+	  return "conf/config.xml";
     }
     
 		private function handleComplete(e:Event):void{
